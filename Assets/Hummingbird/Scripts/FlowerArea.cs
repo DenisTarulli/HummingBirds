@@ -94,8 +94,7 @@ public class FlowerArea : MonoBehaviour
             else
             {
                 // Not a flower plant, look for a Flower component
-                Flower flower = child.GetComponent<Flower>();
-                if (flower != null)
+                if (child.TryGetComponent<Flower>(out var flower))
                 {
                     // Found a flower, add it tot he Flowers list
                     Flowers.Add(flower);
